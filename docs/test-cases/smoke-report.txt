@@ -1,0 +1,245 @@
+dsh-inline-visualizer 2.0.1 — npm test (test/smoke.mjs, real @deepseek-ai/dsh-tools schema)
+run at 2026-10-31
+
+
+=== PART A — host half (index.js) ===
+
+(host suite completed: true)
+
+=== PART C — real defineTool schema validation ===
+  using real defineTool from <DSH_INSTALL>\resources\app.asar\dsh\node_modules\@deepseek-ai\dsh-tools\lib\index.js
+
+=== PART B — browser half (client.js) ===
+[note] sanitizer output for "style img url(http)": <svg data-viz-theme="light" style="max-width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"><style>:root{--viz-bg-primary:#FFFFFF;--viz-bg-secondary:#F7F7F6;--viz-bg-tertiary:#EDEDEB;--viz-text-primar
+[note] sanitizer output for "use xlink:href http": <svg data-viz-theme="light" style="max-width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg"><style>:root{--viz-bg-primary:#FFFFFF;--viz-bg-secondary:#F7F7F6;--viz-bg-tertiary:#EDEDEB;--viz-text-primar
+
+(client suite completed: true)
+
+=== PART D — packaging / publishability ===
+
+=== REPORT ===
+1. [PASS] A1 patched exactly one host import line
+2. [PASS] A2 exported name is dsh-inline-visualizer
+3. [PASS] A3 inject is ["tools"]
+4. [PASS] A4 apply is a function
+5. [PASS] A5 exactly two tools registered
+6. [PASS] A6 tool names
+7. [PASS] A7 guidelines returns loaded modules in order
+8. [PASS] A8 guidelines rejected is empty
+9. [PASS] A9 guidelines chars matches text length
+10. [PASS] A10 approxTokens is chars/3.2 rounded
+11. [PASS] A11 contract header lists _core + selection
+12. [PASS] A12 contract carries --viz- guidance
+13. [PASS] A13 JSON-string module list parses
+14. [PASS] A14 unknown module names land in rejected (deduped, lowercased)
+15. [PASS] A15 known modules survive alongside rejected
+16. [PASS] A16 empty module list defaults to diagram
+17. [PASS] A17 comma/space separated string parses
+18. [PASS] A18 _core/core/empty are skipped, not rejected
+19. [PASS] A18b nothing else requested -> diagram default
+20. [PASS] A19 a second module read resolves its own file
+21. [PASS] A20 svg kind detected
+22. [PASS] A20b ok true
+23. [PASS] A21 title passes through (spaces collapsed)
+24. [PASS] A22 fileName normalized
+25. [PASS] A23 chars is code length
+26. [PASS] A24 loading_messages normalized
+27. [PASS] A25 html kind detected
+28. [PASS] A26 html fileName uses .html
+29. [PASS] A27 default loading messages when omitted
+30. [PASS] A28 blank title falls back to 可视化
+31. [PASS] A29 whitespace in title collapsed
+32. [PASS] A30 trailing .svg extension stripped after the space is normalized
+33. [PASS] A30b NOTE: only trailing .svg/.html is stripped — a mid-name dot survives
+34. [PASS] A30c .svg immediately after a word is also stripped
+35. [PASS] A31 illegal filename chars replaced
+36. [PASS] A31b stem is only fallback-replaced when EMPTY — "!!!" survives
+37. [PASS] A31c empty title falls back to 可视化 then normalizes to it
+38. [PASS] A32 at most 5 loading messages kept
+39. [PASS] A32b empties dropped, order preserved
+40. [PASS] A33 long message truncated to 48 chars
+41. [PASS] A33b truncation ends with ellipsis
+42. [PASS] A33c head of message preserved
+43. [PASS] A34 all-empty loading list falls back to defaults
+44. [PASS] A34b string loading_messages split on | , newline
+45. [PASS] A35 inner whitespace collapsed in a message
+46. [PASS] A36 blank widget_code is rejected
+47. [PASS] A37 missing widget_code is rejected
+48. [PASS] A38 truncated SVG (no closing tag) is rejected
+49. [PASS] A39 SVG not starting with <svg> is rejected
+50. [PASS] A40 markdown-fenced SVG is rejected
+51. [PASS] A41 oversized widget_code is rejected
+52. [PASS] A41b HTML with no element is rejected
+53. [PASS] A41c HTML made only of multi-letter tags is accepted
+54. [PASS] A42 render ack is a single text block
+55. [PASS] A43 render ack does not leak widget source
+56. [PASS] A43b render ack does not leak the rect markup
+57. [PASS] A44 render ack names the title
+58. [PASS] A45 render ack states kind and size
+59. [PASS] A46 render ack is short (<400 chars)
+60. [PASS] A47 guidelines render returns the contract text verbatim
+61. [PASS] A48 execute honours exec.signal.throwIfAborted
+62. [PASS] C1 captured the raw tool specs
+63. [PASS] C2 widget_guidelines passes the real schema compiler
+64. [PASS] C2 widget_guidelines compiled parameters to JSON Schema
+65. [PASS] C2 widget_guidelines exposes output.schema
+66. [PASS] C2 widget_guidelines exposes output.render
+67. [PASS] C2 show_widget passes the real schema compiler
+68. [PASS] C2 show_widget compiled parameters to JSON Schema
+69. [PASS] C2 show_widget exposes output.schema
+70. [PASS] C2 show_widget exposes output.render
+71. [PASS] B0 client.js is captured as a ModuleLoader load()
+72. [PASS] B1 module id matches package.json name
+73. [PASS] B2 factory is a function
+74. [PASS] B3 require list is exactly ["react"]
+75. [PASS] B4 require list stays inside the browser module table
+76. [PASS] B5 plugin injects slots, locale and theme
+77. [PASS] B6 slot inject name
+78. [PASS] B7 registered slot name
+79. [PASS] B8 registered slot key
+80. [PASS] B8b registration declares the plugin locale namespace
+81. [PASS] B8c locale namespace registered with the runtime
+82. [PASS] B9 registered component is a function
+83. [PASS] B10 streaming phase with complete JSON renders the img path
+84. [PASS] B10b img src is an svg data URI
+85. [PASS] B10c decoded svg carries data-viz-theme
+86. [PASS] B10d decoded svg carries a --viz- token definition
+87. [PASS] B10e decoded svg carries xmlns
+88. [PASS] B10f decoded svg carries the SVG body
+89. [PASS] B11 result/tool-call block unwraps to the img path
+90. [PASS] B11b block without `kind` but with call also unwraps
+91. [PASS] B11c started head (phase start, argsRaw at top level) renders
+92. [PASS] B11d FINDING: kind-tagged block with call === null shows the waiting skeleton (host parity)
+93. [PASS] B12 XSS script tag: payload stripped
+94. [PASS] B12 XSS script tag: payload stripped from the raw src too
+95. [PASS] B12 XSS script tag: payload stripped (raw)
+96. [PASS] B12 XSS xlink:href http image: payload stripped
+97. [PASS] B12 XSS xlink:href http image: payload stripped from the raw src too
+98. [PASS] B12 XSS xlink:href http image: payload stripped (raw)
+99. [PASS] B12 XSS onload handler: payload stripped
+100. [PASS] B12 XSS onload handler: payload stripped from the raw src too
+101. [PASS] B12 XSS onload handler: payload stripped (raw)
+102. [PASS] B13 var() paint attr moved into a style attribute
+103. [PASS] B13b no fill="var(" presentation attribute survives
+104. [PASS] B13c the rect itself survives
+105. [PASS] B14 html path renders an iframe
+106. [PASS] B15 iframe sandbox is allow-scripts
+107. [PASS] B16 srcDoc declares a Content-Security-Policy
+108. [PASS] B17 srcDoc carries a --viz- token
+109. [PASS] B18 srcDoc carries the height bridge
+110. [PASS] B18b height bridge posts to parent
+111. [PASS] B18c html branch sets data-viz-theme
+112. [PASS] B18d the widget fragment is present
+113. [PASS] B19 no duplicate --viz- token declarations
+114. [PASS] B19b token opacity: tokenCss emitted exactly once
+115. [PASS] B20 svg keeps a single data-viz-theme attribute
+116. [PASS] B20b svg keeps a single xmlns attribute
+117. [PASS] B20c svg gets the max-width style
+118. [PASS] B20d svg gets an injected <style> block
+119. [PASS] B20e a leading data-viz-theme attribute is not duplicated
+120. [PASS] B20f a leading xmlns attribute is not duplicated
+121. [PASS] B20g the leading theme value the model supplied is preserved
+122. [PASS] B20h a non-leading attribute is recognized (control case)
+123. [PASS] B20j a > inside an attribute value does not duplicate data-viz-theme
+124. [PASS] B20k the model-supplied theme after the > is preserved
+125. [PASS] B20i an escaped <svg&gt; inside text does not trigger a second injection
+126. [PASS] B20j sanitizer: unquoted onerror is stripped
+127. [PASS] B20j sanitizer: single-quoted ONLOAD is stripped
+128. [PASS] B20j sanitizer: animate element is stripped
+129. [PASS] B20j sanitizer: foreignObject is stripped
+130. [PASS] B20j sanitizer: javascript: href is stripped
+131. [PASS] B20j sanitizer: data:text/html href is stripped
+132. [PASS] B20j sanitizer: iframe element is stripped
+133. [PASS] B20j sanitizer: style img url(http) (recorded, not yet asserted on content)
+134. [PASS] B20j sanitizer: use xlink:href http (recorded, not yet asserted on content)
+135. [PASS] B21 preparing state shows the waiting skeleton
+136. [PASS] B21b preparing state keeps the loading text
+137. [PASS] B21c preparing state renders no img
+138. [PASS] B21d preparing state renders no iframe
+139. [PASS] B22 blank widget_code falls back to the waiting skeleton
+140. [PASS] B23 truncated argsRaw falls back to the waiting skeleton
+141. [PASS] B24 truncated SVG renders an error card
+142. [PASS] B24b error text names the missing close tag
+143. [PASS] B25 custom loading message shown while arguments stream in
+144. [PASS] B25b FINDING: a kind-less preparing row returns null before reading argsRaw, so its loading_messages are dropped (defaults shown)
+145. [PASS] B25c preparing row with no arguments shows the defaults
+146. [PASS] B26 oversized code renders the error card
+147. [PASS] B27 theme service reports dark -> data-viz-theme to dark
+148. [PASS] B27b dark theme uses the dark token value
+149. [PASS] B27c light theme uses the light token value
+150. [PASS] B27d light theme does not emit the dark bg token
+151. [PASS] B27e the card subscribes to theme/change
+152. [PASS] B27f theme/change listener is wired through ctx.on
+153. [PASS] B28 host --dsw-alias-bg-base wins over the built-in default
+154. [PASS] B28b built-in light default is not used when the host defines one
+155. [PASS] B28c a second host token is picked up too
+156. [PASS] B29 the theme service wins over a dark body attribute
+157. [PASS] B29b no body-attribute guessing leaks into the document
+158. [PASS] B30 skeleton mounts the spinner keyframes
+159. [PASS] B30b useRotating only keeps the first message on the first render
+160. [PASS] D1 package is not private (publishable)
+161. [PASS] D2 version is a major-2 semver
+162. [PASS] D3 engines.dsh declares the tested host line
+163. [PASS] D4 exports .
+164. [PASS] D4 exports ./client
+165. [PASS] D4 exports ./locale/*.json
+166. [PASS] D4 exports ./icon
+167. [PASS] D4 exports ./package.json
+168. [PASS] D5 files ships index.js
+169. [PASS] D5 files ships client.js
+170. [PASS] D5 files ships cordis.patch.yml
+171. [PASS] D5 files ships guidelines
+172. [PASS] D5 files ships locale
+173. [PASS] D5 files ships icon.svg
+174. [PASS] D5 files ships README.md
+175. [PASS] D5 files ships LICENSE
+176. [PASS] D5 files ships CHANGELOG.md
+177. [PASS] D5 files ships test
+178. [PASS] D5 files ships assets
+179. [PASS] D6 icon.svg parses as an svg document
+180. [PASS] D7 icon.svg carries a viewBox
+181. [PASS] D8 locale/en.json declares meta.title
+182. [PASS] D9 locale/en.json declares meta.description
+183. [PASS] D10 locale/zh.json declares meta.title
+184. [PASS] D11 cordis.patch.yml inserts a row named after the package
+185. [PASS] D12 dsh.client.platform is web
+186. [PASS] D12b repository.url points at a repo named after the package
+187. [PASS] D12c homepage points at the same repo
+188. [PASS] D12d bugs points at the same repo
+189. [PASS] D13 runtime en dictionary matches locale/en.json
+190. [PASS] D14 runtime zh dictionary matches locale/zh.json
+191. [PASS] D15 en and zh dictionaries cover the same keys
+192. [PASS] D16 client.js no longer probes data-ds-dark-theme
+193. [PASS] D17 client.js no longer reads the body background
+194. [PASS] D18 client.js no longer uses MutationObserver
+195. [PASS] D19 client.js no longer reads body attributes
+196. [PASS] D20 client.js reads the documented theme service
+197. [PASS] D21 client.js subscribes to theme/change
+198. [PASS] D22 client.js registers its locale namespace
+199. [PASS] D23 view code button appears exactly once (dictionary only)
+200. [PASS] D23 download button appears exactly once (dictionary only)
+201. [PASS] D23 error prefix appears exactly once (dictionary only)
+202. [PASS] D23 waiting title appears exactly once (dictionary only)
+203. [PASS] D24 chart guidance no longer ships a Chart.js CDN instruction
+204. [PASS] D24b chart guidance no longer instantiates a third-party chart runtime
+205. [PASS] D25 chart guidance points at hand-drawn SVG
+
+TOTAL: 205/205 passed, 0 failed
+
+COVERAGE GAPS (cannot be exercised without a real browser):
+- No real layout: iframe height bridging, ResizeObserver path, postMessage origin/source checks
+  (event.source !== frame.contentWindow) and the download anchor click are never executed.
+- useEffect bodies never run (fake React), so MutationObserver-driven theme sync, the
+  matchMedia 'change' listener, and interval-driven loading-message rotation are unverified.
+  The rotating hook is checked only at its first render index.
+- No real CSP enforcement: the iframe document text is asserted, but whether a browser
+  blocks connect-src/base-uri/form-action is not observable here.
+- No real SVG/DOM parsing: sanitizer and paint-rescue assertions are regex-level on the
+  generated text. Entity/namespace tricks a real parser resolves (e.g. style-tag-smuggled
+  @import, mXSS on foreignObject, case-variant event handlers split across attributes) are
+  not covered.
+- The data-URI img decoding is done by decodeURIComponent only; a browser's own percent
+  decoding of '#'-bearing data URIs is untested.
+- No React reconciliation: keys, real hook state, event handler invocation, or SSR/hydration
+  differences are not tested.
+

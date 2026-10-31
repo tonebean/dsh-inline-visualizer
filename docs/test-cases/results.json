@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-10-31T14:45:00Z",
+  "plugin": {
+    "name": "dsh-inline-visualizer",
+    "version": "2.0.1"
+  },
+  "runtime": {
+    "dsh": "0.2.1-rc.5",
+    "platform": "win32"
+  },
+  "cases": [
+    {
+      "id": "diagram",
+      "module": "diagram",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1733,
+      "sample": "samples/01-diagram.svg",
+      "screenshot": "screenshots/01-diagram.png",
+      "notes": "三节点单向流程，箭头 marker + 语义令牌"
+    },
+    {
+      "id": "chart",
+      "module": "chart",
+      "kind": "svg",
+      "ok": true,
+      "chars": 2822,
+      "sample": "samples/02-chart.svg",
+      "screenshot": "screenshots/02-chart.png",
+      "notes": "五柱柱状图，坐标轴/网格/数值标签"
+    },
+    {
+      "id": "mockup",
+      "module": "mockup",
+      "kind": "html",
+      "ok": true,
+      "chars": 3322,
+      "sample": "samples/03-mockup.html",
+      "screenshot": "screenshots/03-mockup.png",
+      "notes": "HTML 表单原型，含错误态、开关、主次按钮"
+    },
+    {
+      "id": "interactive",
+      "module": "interactive",
+      "kind": "html",
+      "ok": true,
+      "chars": 1942,
+      "sample": "samples/04-interactive.html",
+      "screenshot": "screenshots/04-interactive.png",
+      "notes": "沙箱 iframe 内原生 JS 计数器"
+    },
+    {
+      "id": "art",
+      "module": "art",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1959,
+      "sample": "samples/05-art.svg",
+      "screenshot": "screenshots/05-art.png",
+      "notes": "分层抽象插画，冷→暖强度编码，外部标签 + 引线"
+    },
+    {
+      "id": "svg-sanitize",
+      "module": null,
+      "kind": "svg",
+      "ok": true,
+      "chars": 866,
+      "sample": "samples/06-svg-sanitize.svg",
+      "screenshot": "screenshots/06-svg-sanitize.png",
+      "notes": "输入含 script/onload/foreignObject；截图为净化后应保留的安全图形"
+    },
+    {
+      "id": "html-sandbox",
+      "module": null,
+      "kind": "html",
+      "ok": true,
+      "chars": 1448,
+      "sample": "samples/07-html-sandbox.html",
+      "screenshot": "screenshots/07-html-sandbox.png",
+      "notes": "iframe 内尝试宿主 DOM/localStorage/fetch；截图为预期隔离结果"
+    },
+    {
+      "id": "guidelines-all",
+      "module": "all",
+      "kind": "api",
+      "ok": true,
+      "chars": 11938,
+      "notes": "modules=[diagram,chart,mockup,interactive,art]，rejected=[]，五份模块正文齐全"
+    },
+    {
+      "id": "guidelines-invalid",
+      "module": "api",
+      "kind": "api",
+      "ok": false,
+      "expectedError": "invalid arguments: \"modules[0]\" must be one of [\"diagram\",\"chart\",\"mockup\",\"interactive\",\"art\"]",
+      "notes": "非法模块名在 schema 层被拒绝"
+    },
+    {
+      "id": "widget-empty",
+      "module": "api",
+      "kind": "api",
+      "ok": false,
+      "expectedError": "widget_code 不能为空：请提供完整的 <svg …>…</svg> 或 HTML 片段。",
+      "notes": "空字符串被拒绝"
+    },
+    {
+      "id": "widget-unclosed-svg",
+      "module": "api",
+      "kind": "api",
+      "ok": false,
+      "expectedError": "SVG 代码不完整：没有找到 </svg>，请重新提交完整代码。",
+      "notes": "未闭合 SVG 被拒绝"
+    },
+    {
+      "id": "widget-plain-text",
+      "module": "api",
+      "kind": "api",
+      "ok": false,
+      "expectedError": "widget_code 里没有可渲染的元素。",
+      "notes": "纯文本被拒绝；同时暴露 v2.0.0 HTML 标签校验正则缺陷"
+    },
+    {
+      "id": "widget-normalize",
+      "module": "api",
+      "kind": "api",
+      "ok": true,
+      "notes": "title 折叠为 标题_规范化_测试.svg；loading_messages 截断为 5 条"
+    }
+  ],
+  "smoke": {
+    "file": "smoke-report.txt",
+    "total": 205,
+    "passed": 205,
+    "failed": 0,
+    "note": "test/smoke.mjs，含真实 dsh-tools schema 的 Part C"
+  }
+}

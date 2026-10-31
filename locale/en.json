@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Inline Visualizer",
+    "description": "Renders SVG and sandboxed HTML cards in place inside the conversation, with a design contract the model loads before drawing."
+  },
+  "strings": {
+    "card.generating": "Rendering",
+    "card.waiting": "Waiting for the model…",
+    "card.showCode": "Show code",
+    "card.hideCode": "Hide code",
+    "card.download": "Download",
+    "card.fallbackTitle": "Visual",
+    "error.prefix": "Could not render the visual: {message}",
+    "error.tooLong": "Code is too long ({chars} characters)",
+    "error.svgIncomplete": "Incomplete SVG: </svg> is missing",
+    "error.noContent": "Nothing to render",
+    "loading.1": "Drawing the diagram…",
+    "loading.2": "Laying it out…",
+    "loading.3": "Almost there…"
+  }
+}

@@ -1,0 +1,13 @@
+# 依赖与临时产物
+node_modules/
+.probe-index.mjs
+*.tgz
+*.log
+
+# 本机工具产物
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 发布前自查用的临时导出（若存在）
+*.local.json

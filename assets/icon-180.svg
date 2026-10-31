@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="180" height="180" role="img" aria-label="Inline Visualizer">
+  <title>Inline Visualizer</title>
+  <rect x="4" y="8" width="56" height="48" rx="10" fill="#EEF5FD" stroke="#3B7DD8" stroke-width="2.5"/>
+  <rect x="12" y="32" width="8" height="16" rx="2" fill="#3B7DD8"/>
+  <rect x="24" y="24" width="8" height="24" rx="2" fill="#1F9E7E"/>
+  <rect x="36" y="16" width="8" height="32" rx="2" fill="#C1811B"/>
+  <path d="M46 40 L52 34 L52 40 Z" fill="#D45E33"/>
+</svg>
+

@@ -1,0 +1,74 @@
+{
+  "name": "dsh-inline-visualizer",
+  "version": "2.0.1",
+  "description": "Inline visualizer for DeepSeek Harness: widget_guidelines + show_widget render SVG/HTML cards in place, inside the conversation.",
+  "type": "module",
+  "license": "MIT",
+  "author": "tonebean",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonebean/dsh-inline-visualizer.git"
+  },
+  "homepage": "https://github.com/tonebean/dsh-inline-visualizer#readme",
+  "bugs": {
+    "url": "https://github.com/tonebean/dsh-inline-visualizer/issues"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "visualization",
+    "svg",
+    "widget"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "guidelines",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "test",
+    "assets"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-tool",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

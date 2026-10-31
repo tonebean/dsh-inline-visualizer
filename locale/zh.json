@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "对话内联可视化",
+    "description": "在对话里就地渲染 SVG 与沙箱 HTML 卡片；模型作图前先按需加载一份设计契约。"
+  },
+  "strings": {
+    "card.generating": "生成中",
+    "card.waiting": "等待模型输出…",
+    "card.showCode": "查看代码",
+    "card.hideCode": "收起代码",
+    "card.download": "下载",
+    "card.fallbackTitle": "可视化",
+    "error.prefix": "可视化渲染失败：{message}",
+    "error.tooLong": "代码过长（{chars} 字符）",
+    "error.svgIncomplete": "SVG 代码不完整（缺少 </svg>）",
+    "error.noContent": "没有可渲染的内容",
+    "loading.1": "正在生成可视化…",
+    "loading.2": "正在排版…",
+    "loading.3": "马上就好…"
+  }
+}

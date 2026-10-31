@@ -1,0 +1,12 @@
+# Bundle patch: inserts this plugin's Host row into the profile.
+# Optional knobs (uncomment inside the row) — they survive plugin upgrades because
+# the user's own patch layer wins over what this file declares:
+#
+#   - insert:
+#       - id: inline-visualizer
+#         name: 'dsh-inline-visualizer'
+#         config:
+#           maxCodeChars: 200000
+- insert:
+    - id: inline-visualizer
+      name: 'dsh-inline-visualizer'
