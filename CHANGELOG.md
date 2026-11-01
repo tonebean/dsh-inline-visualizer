@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2 — 2026-11-01
+
+### 文档
+
+- README 增加 hero 与“装/不装”对比图。
+- 安装说明改为按包名 `dsh-inline-visualizer` 安装。
+- npm 包同步 README 与展示图。
+
 ## 2.0.1 — 2026-10-31
 
 ### 修复

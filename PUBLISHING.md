@@ -7,10 +7,10 @@
 | 项 | 值 |
 |---|---|
 | 包名 | `dsh-inline-visualizer` |
-| 版本 | `2.0.0` |
-| npm 占用 | 2026-10-31 查询：**404，可用** |
-| 自测 | `npm test` → 197 / 197 |
-| 打包 | 21 个文件（含 `test/` 与 `assets/`） |
+| 版本 | `2.0.2` |
+| npm 状态 | **已发布**：`latest` 跟随 npm 最新正式版；`0.0.0-stage` 是首次发布的占位版 |
+| 自测 | `npm test` → 197 / 197（Part C 开启时 205 / 205） |
+| 打包 | 23 个文件 / 约 179 kB（解包约 273 kB，含 `test/` 与 `assets/`） |
 | 目标宿主 | DSH `0.2.1-rc.5` |
 
 ## 1. 前置条件（缺一项就发不出去）
@@ -24,15 +24,15 @@
 
 ```sh
 npm login
-npm view dsh-inline-visualizer version    # 期望 404 E404，确认名字仍空着
-npm test                                  # 197/197
-npm pack --dry-run                        # 核对 21 个文件（test/ 与 assets/ 随包发布）
-npm publish --access public
-npm view dsh-inline-visualizer version    # 回显 2.0.0
+npm test                                  # 197/197（Part C 开启时 205/205）
+npm pack --dry-run                        # 核对 23 个文件（test/ 与 assets/ 随包发布）
+npm publish                               # 若走暂存发布，需在 npmjs.com 批准后才生效
+npm view dsh-inline-visualizer version    # 回显 2.0.2
 ```
 
 - **名字被抢注时**：改 scoped（`@<你的昵称>/dsh-inline-visualizer`），并**同步三处**：`package.json.name`、`cordis.patch.yml` 的 `name:`、`client.js` 的 `load({ id })`。改完 `npm test` 的 `B1`/`D11` 会立刻报错兜住。
-- **回滚**：发布 72 小时内可 `npm unpublish dsh-inline-visualizer@2.0.0 --force`；超过 72 小时只能发新版本覆盖。
+- **回滚**：发布 72 小时内可 `npm unpublish dsh-inline-visualizer@2.0.2 --force`；超过 72 小时只能发新版本覆盖。
+- **暂存发布占位版**：首次发布若用 staged publishing，registry 会先出现 `0.0.0-stage` 占位版；须在 npmjs.com 的 Staged Packages 里批准，`latest` 才会指向正式版本。
 - 发版前别忘 `version` 递增（`npm version patch|minor`）。
 
 ## 3. 本地实装验收（发布前必须做一次）
@@ -102,16 +102,15 @@ npm 的预发布规则：`0.2.2-rc.1` 这类版本，只有当范围里**存在�
 
 → 当宿主升到 `0.2.2-rc.x` 这一线时，**必须**把范围改成 `>=0.2.2-rc.1 <0.3.0`（或加 `||` 分支），否则用户会看到 `incompatible-version`。这条要写进升级检查清单。
 
-## 7. 当前的阻塞项（只有账号能做）
+## 7. 阻塞项（2026-11-01 已全部解除）
 
-2026-10-31 实测：
-
-| 检查 | 结果 | 影响 |
-|---|---|---|
-| `npm whoami` | `ENEEDAUTH`（未登录） | 发不了 npm |
-| `GET /repos/tonebean/dsh-inline-visualizer` | **404（仓库不存在）** | 推不了代码、提不了 PR、`repository` 字段指向空 |
-| `git` | 2.40.0 ✅ | — |
-| `gh` CLI | 未安装 | 提 PR 需走网页或装 gh |
+| 检查 | 结果 |
+|---|---|
+| `npm whoami` | `tonebean` ✅ |
+| npm 发布 | `latest` 指向最新正式版 ✅ |
+| `GET /repos/tonebean/dsh-inline-visualizer` | 200，公开仓库 ✅ |
+| 仓库 topic | 含 `dsh-plugin` ✅ |
+| `gh` CLI | 未安装（提 PR 走网页即可） |
 
 ## 8. 提 PR 的具体命令（无 gh CLI）
 

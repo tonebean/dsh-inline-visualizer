@@ -1,11 +1,19 @@
 # dsh-inline-visualizer
 
-[GitHub](https://github.com/tonebean/dsh-inline-visualizer) · MIT · DSH 0.2.1-rc.5
+![dsh-inline-visualizer](https://raw.githubusercontent.com/tonebean/dsh-inline-visualizer/v2.0.2/assets/readme-hero.png)
+
+[![npm](https://img.shields.io/npm/v/dsh-inline-visualizer.svg)](https://www.npmjs.com/package/dsh-inline-visualizer) · [GitHub](https://github.com/tonebean/dsh-inline-visualizer) · MIT · DSH 0.2.1-rc.5
 
 把「内联可视化」变成 DeepSeek Harness 里的两个内置工具：模型先说清要画什么（`widget_guidelines` 加载设计契约），再把片段交给 `show_widget`——**卡片当场渲染在对话里，图本身不进模型上下文**。
 
 - 适用于 **DSH 0.2.1-rc.5**（`engines.dsh: >=0.2.1-rc.5 <0.3.0`）。
 - 纯 JavaScript，无构建步骤、无第三方运行时依赖；Host 侧使用宿主提供的 `@deepseek-ai/dsh-tools`，浏览器侧只从宿主模块表取 `react`。
+
+## 装与不装
+
+![装与不装](https://raw.githubusercontent.com/tonebean/dsh-inline-visualizer/v2.0.2/assets/readme-compare.png)
+
+不安装时，图只能以代码块或文件形式出现；安装后，卡片直接在对话里渲染，可交互、可下载、自动跟随主题。
 
 ## 为什么是它
 
@@ -35,13 +43,15 @@
 
 ## 安装
 
+已发布到 [npm](https://www.npmjs.com/package/dsh-inline-visualizer)（`dsh-inline-visualizer@2.0.2`）。
+
 在 DSH 里用插件管理器安装（推荐）：
 
 ```
-plugin_manager { action: "install_bundle", target: "<本项目绝对路径>" }
+plugin_manager { action: "install_bundle", target: "dsh-inline-visualizer" }
 ```
 
-该操作需要 `danger-full-access` 审批；`target` 传 pnpm 可识别的安装 spec（本地目录用绝对路径即可）。
+该操作需要 `danger-full-access` 审批；`target` 传 pnpm 可识别的安装 spec——包名（从 npm 安装）或本地目录的绝对路径均可。
 
 手工装（仅开发时）：把包放进 `$DSH_HOME/profiles/<profile>/node_modules/dsh-inline-visualizer`（例如 `~/.dsh/profiles/desktop/node_modules/dsh-inline-visualizer`），并在该 profile 的 `cordis.patch.yml` 追加：
 
@@ -82,6 +92,8 @@ plugin_manager { action: "install_bundle", target: "<本项目绝对路径>" }
 | `locale/{en,zh}.json` | 显示元数据（`meta.title`/`meta.description`）与运行期词条 |
 | `icon.svg` | 插件图标（64×64，随包发布） |
 | `assets/icon-180.png` | 市场卡片图标（180×180 PNG，仅列表用） |
+| `assets/readme-hero.png` | README 顶部展示图（随包发布） |
+| `assets/readme-compare.png` | 装/不装对比图（随包发布） |
 | `test/smoke.mjs` | `npm test`：197 项断言（启用 Part C 后 205 项），含真实 `defineTool` schema 编译 |
 | `CHANGELOG.md` | 版本记录 |
 
@@ -93,7 +105,7 @@ npm test
 
 分四部分：Host 半边的工具定义、用**真实** `dsh-tools` 编译 schema（`DSH_TOOLS_ENTRY` 指向其 `lib/index.js` 或 `lib/types/schema.js` 时启用）、浏览器半边的渲染/XSS/主题、以及打包与发布要求。
 
-视觉测试用例与截图见 [docs/test-cases](docs/test-cases/README.md)：覆盖 5 个设计模块、两条渲染路径、安全净化与参数校验，共 30 个用例、24 张截图，并附完整冒烟测试报告。
+视觉测试用例与截图见 [docs/test-cases](https://github.com/tonebean/dsh-inline-visualizer/tree/main/docs/test-cases)：覆盖 5 个设计模块、两条渲染路径、安全净化与参数校验，共 30 个用例、24 张截图，并附完整冒烟测试报告。
 
 ## 已知限制
 

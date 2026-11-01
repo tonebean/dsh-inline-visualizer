@@ -1,6 +1,6 @@
 {
   "name": "dsh-inline-visualizer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Inline visualizer for DeepSeek Harness: widget_guidelines + show_widget render SVG/HTML cards in place, inside the conversation.",
   "type": "module",
   "license": "MIT",
