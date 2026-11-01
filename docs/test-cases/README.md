@@ -24,6 +24,23 @@
 | 11 | 未闭合 SVG | — | API | ✅ 被拒绝 |
 | 12 | 纯文本 | — | API | ✅ 被拒绝 |
 | 13 | title/loading_messages 规范化 | — | API | ✅ 文件名与 5 条上限正确 |
+| 14 | 结构图（浏览器/宿主/profile） | diagram | SVG | ✅ |
+| 15 | 分支流程（缓存命中） | diagram | SVG | ✅ |
+| 16 | 折线图（双序列） | chart | SVG | ✅ |
+| 17 | 饼图（四扇区） | chart | SVG | ✅ |
+| 18 | 散点图（两组） | chart | SVG | ✅ |
+| 19 | 团队成员列表 | mockup | HTML | ✅ |
+| 20 | 输入框四态 | mockup | HTML | ✅ |
+| 21 | 通知偏好开关 | interactive | HTML | ✅ |
+| 22 | 三步向导 | interactive | HTML | ✅ |
+| 23 | 热水器剖面 | art | SVG | ✅ |
+| 24 | 漏斗与三个桶 | art | SVG | ✅ |
+| 25 | 温度梯度 | art | SVG | ✅ |
+| 26 | SVG 净化矩阵 | security | SVG | ✅ |
+| 27 | HTML 沙箱安全矩阵 | security | HTML | ✅ |
+| 28 | 主题令牌（浅/深） | theme | SVG | ✅ 2 张 |
+| 29 | 多字母标签回归 | api | HTML | ✅ |
+| 30 | 超长 widget_code | api | API | ✅ 被拒绝 |
 
 ## 截图
 
@@ -58,6 +75,76 @@
 图中的三项是 iframe 内脚本运行后的预期结果：宿主 DOM 访问被拦截、`localStorage` 不可用、网络请求被 CSP 拦截。
 
 ![html sandbox](screenshots/07-html-sandbox.png)
+
+### 14. diagram 结构图
+
+![diagram structure](screenshots/08-diagram-structure.png)
+
+### 15. diagram 分支流程
+
+![diagram branch](screenshots/09-diagram-branch.png)
+
+### 16. chart 折线图
+
+![chart line](screenshots/10-chart-line.png)
+
+### 17. chart 饼图
+
+![chart pie](screenshots/11-chart-pie.png)
+
+### 18. chart 散点图
+
+![chart scatter](screenshots/12-chart-scatter.png)
+
+### 19. mockup 列表页
+
+![mockup list](screenshots/13-mockup-list.png)
+
+### 20. mockup 输入框四态
+
+![mockup states](screenshots/14-mockup-states.png)
+
+### 21. interactive 开关面板
+
+![interactive toggle](screenshots/15-interactive-toggle.png)
+
+### 22. interactive 三步向导
+
+![interactive stepper](screenshots/16-interactive-stepper.png)
+
+### 23. art 热水器剖面
+
+![art cross section](screenshots/17-art-cross-section.png)
+
+### 24. art 漏斗隐喻
+
+![art metaphor](screenshots/18-art-metaphor.png)
+
+### 25. art 温度梯度
+
+![art gradient](screenshots/19-art-gradient.png)
+
+### 26. SVG 净化矩阵
+
+![svg security matrix](screenshots/20-security-svg-matrix.png)
+
+### 27. HTML 沙箱安全矩阵
+
+![html security matrix](screenshots/21-security-html-matrix.png)
+
+### 28. 主题令牌（浅色 / 深色）
+
+浅色：
+
+![theme light](screenshots/theme-light.png)
+
+深色：
+
+![theme dark](screenshots/theme-dark.png)
+
+### 29. 多字母标签回归
+
+![api multitag](screenshots/23-api-multitag.png)
 
 ## 复现
 

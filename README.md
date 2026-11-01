@@ -93,7 +93,7 @@ npm test
 
 分四部分：Host 半边的工具定义、用**真实** `dsh-tools` 编译 schema（`DSH_TOOLS_ENTRY` 指向其 `lib/index.js` 或 `lib/types/schema.js` 时启用）、浏览器半边的渲染/XSS/主题、以及打包与发布要求。
 
-视觉测试用例与截图见 [docs/test-cases](docs/test-cases/README.md)：覆盖 5 个设计模块、两条渲染路径、安全净化与参数校验，共 13 个用例、7 张截图，并附完整冒烟测试报告。
+视觉测试用例与截图见 [docs/test-cases](docs/test-cases/README.md)：覆盖 5 个设计模块、两条渲染路径、安全净化与参数校验，共 30 个用例、24 张截图，并附完整冒烟测试报告。
 
 ## 已知限制
 

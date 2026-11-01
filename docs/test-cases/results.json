@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T14:45:00Z",
+  "generatedAt": "2026-11-01T03:45:00Z",
   "plugin": {
     "name": "dsh-inline-visualizer",
     "version": "2.0.1"
@@ -125,6 +125,177 @@
       "kind": "api",
       "ok": true,
       "notes": "title 折叠为 标题_规范化_测试.svg；loading_messages 截断为 5 条"
+    },
+    {
+      "id": "diagram-structure",
+      "module": "diagram",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1514,
+      "sample": "samples/08-diagram-structure.svg",
+      "screenshot": "screenshots/08-diagram-structure.png",
+      "notes": "嵌套容器结构图，外层容器 + 三个区域"
+    },
+    {
+      "id": "diagram-branch",
+      "module": "diagram",
+      "kind": "svg",
+      "ok": true,
+      "chars": 2281,
+      "sample": "samples/09-diagram-branch.svg",
+      "screenshot": "screenshots/09-diagram-branch.png",
+      "notes": "分支流程，命中/未命中两条路径"
+    },
+    {
+      "id": "chart-line",
+      "module": "chart",
+      "kind": "svg",
+      "ok": true,
+      "chars": 2777,
+      "sample": "samples/10-chart-line.svg",
+      "screenshot": "screenshots/10-chart-line.png",
+      "notes": "双序列折线图，6 个数据点"
+    },
+    {
+      "id": "chart-pie",
+      "module": "chart",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1303,
+      "sample": "samples/11-chart-pie.svg",
+      "screenshot": "screenshots/11-chart-pie.png",
+      "notes": "四扇区饼图，带百分比图例"
+    },
+    {
+      "id": "chart-scatter",
+      "module": "chart",
+      "kind": "svg",
+      "ok": true,
+      "chars": 2145,
+      "sample": "samples/12-chart-scatter.svg",
+      "screenshot": "screenshots/12-chart-scatter.png",
+      "notes": "十二点散点图，两组颜色"
+    },
+    {
+      "id": "mockup-list",
+      "module": "mockup",
+      "kind": "html",
+      "ok": true,
+      "chars": 1908,
+      "sample": "samples/13-mockup-list.html",
+      "screenshot": "screenshots/13-mockup-list.png",
+      "notes": "团队成员列表，头像/角色徽章/邀请按钮"
+    },
+    {
+      "id": "mockup-states",
+      "module": "mockup",
+      "kind": "html",
+      "ok": true,
+      "chars": 1429,
+      "sample": "samples/14-mockup-states.html",
+      "screenshot": "screenshots/14-mockup-states.png",
+      "notes": "输入框默认/聚焦/禁用/错误四态"
+    },
+    {
+      "id": "interactive-toggle",
+      "module": "interactive",
+      "kind": "html",
+      "ok": true,
+      "chars": 1950,
+      "sample": "samples/15-interactive-toggle.html",
+      "screenshot": "screenshots/15-interactive-toggle.png",
+      "notes": "三个开关联动汇总文案"
+    },
+    {
+      "id": "interactive-stepper",
+      "module": "interactive",
+      "kind": "html",
+      "ok": true,
+      "chars": 2343,
+      "sample": "samples/16-interactive-stepper.html",
+      "screenshot": "screenshots/16-interactive-stepper.png",
+      "notes": "三步向导，上一步/下一步"
+    },
+    {
+      "id": "art-cross-section",
+      "module": "art",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1710,
+      "sample": "samples/17-art-cross-section.svg",
+      "screenshot": "screenshots/17-art-cross-section.png",
+      "notes": "热水器剖面：罐体/水体/线圈/热源，外部引线标签"
+    },
+    {
+      "id": "art-metaphor",
+      "module": "art",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1353,
+      "sample": "samples/18-art-metaphor.svg",
+      "screenshot": "screenshots/18-art-metaphor.png",
+      "notes": "抽象漏斗分流入三个桶"
+    },
+    {
+      "id": "art-gradient",
+      "module": "art",
+      "kind": "svg",
+      "ok": true,
+      "chars": 728,
+      "sample": "samples/19-art-gradient.svg",
+      "screenshot": "screenshots/19-art-gradient.png",
+      "notes": "单 linearGradient 温度梯度"
+    },
+    {
+      "id": "security-svg-matrix",
+      "module": "security",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1215,
+      "sample": "samples/20-security-svg-matrix.svg",
+      "screenshot": "screenshots/20-security-svg-matrix.png",
+      "notes": "script/onerror/foreignObject/iframe/animate/style 注入矩阵"
+    },
+    {
+      "id": "security-html-matrix",
+      "module": "security",
+      "kind": "html",
+      "ok": true,
+      "chars": 1305,
+      "sample": "samples/21-security-html-matrix.html",
+      "screenshot": "screenshots/21-security-html-matrix.png",
+      "notes": "parent.document/localStorage/fetch/window.open 四项隔离"
+    },
+    {
+      "id": "theme-tokens",
+      "module": "theme",
+      "kind": "svg",
+      "ok": true,
+      "chars": 1060,
+      "sample": "samples/22-theme-tokens.svg",
+      "screenshots": [
+        "screenshots/theme-light.png",
+        "screenshots/theme-dark.png"
+      ],
+      "notes": "同一张图的浅色/深色令牌对照"
+    },
+    {
+      "id": "api-multitag",
+      "module": "api",
+      "kind": "html",
+      "ok": true,
+      "chars": 885,
+      "sample": "samples/23-api-multitag.html",
+      "screenshot": "screenshots/23-api-multitag.png",
+      "notes": "2.0.1 回归：只含多字母标签的 HTML 可通过"
+    },
+    {
+      "id": "api-oversize",
+      "module": "api",
+      "kind": "api",
+      "ok": false,
+      "expectedError": "widget_code 过长：200011 字符，上限 200000。请拆成多张图分别调用。",
+      "notes": "超过默认 200000 字符上限被拒绝"
     }
   ],
   "smoke": {
